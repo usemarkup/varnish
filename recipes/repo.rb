@@ -31,9 +31,9 @@ when 'debian'
 when 'rhel', 'fedora'
   yum_repository 'varnish' do
     description "Varnish #{node['varnish']['version']} repo (#{node['platform_version']} - $basearch)"
-    url "http://repo.varnish-cache.org/redhat/varnish-#{node['varnish']['version']}/el#{node['platform_version'].to_i}/"
+    url "https://packagecloud.io/varnishcache/varnish#{node['varnish']['version']}/el/#{node['platform_version'].to_i}/$basearch"
     gpgcheck false
-    gpgkey 'http://repo.varnish-cache.org/debian/GPG-key.txt'
+    gpgkey 'https://packagecloud.io/varnishcache/varnish41/gpgkey'
     action :create
   end
 end
